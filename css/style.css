@@ -8186,8 +8186,8 @@ h1, h2, h3, h4, h5,
   .ftco-navbar-light .navbar-brand {
     color: #6333bd; }
     .ftco-navbar-light .navbar-brand span {
-      color: #d9bf77;
-      font-size: 28px; }
+      color: #b086ff;
+      font-size: 20px; }
     .ftco-navbar-light .navbar-brand:hover, .ftco-navbar-light .navbar-brand:focus {
       color: #000; }
     @media (max-width: 991.98px) {
@@ -8526,7 +8526,7 @@ h1, h2, h3, h4, h5,
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
-    background: #4a3f78ad !important;
+    background: #e277cd !important;
     border: 1px solid #d9bf77 !important;
     color: #fff; }
     .btn.btn-primary:hover {
@@ -8672,7 +8672,7 @@ h1, h2, h3, h4, h5,
 .treatment .icon span {
   font-size: 60px;
   line-height: 1;
-  color: #946bc9; }
+  color: #e277cd; }
 
 .treatment h3 {
   font-size: 20px; }
@@ -8681,7 +8681,7 @@ h1, h2, h3, h4, h5,
   margin: 0 auto;
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-  background: #5630cd78; }
+  background: #e277cd; }
 
 .myaccordion .card,
 .myaccordion .card:last-child .card-header {
@@ -9713,7 +9713,7 @@ textarea.form-control {
 
 /* สร้างขอบสีม่วงรอบ Section เหมือนในรูป */
 .gallery-boxed {
-    border: 10px solid #9d90e1; /* ความหนาและสีม่วง */
+    border: 10px solid #e277cd; /* ความหนาและสีม่วง */
     border-radius: 20px;        /* ความโค้งมนของขอบ */
     padding: 60px 20px;         /* ระยะห่างจากขอบม่วงเข้ามาหาเนื้อหา */
     margin: 40px 15px;          /* ระยะห่างจาก section อื่นๆ */
@@ -9793,4 +9793,68 @@ textarea.form-control {
 .block-23 ul li .icon {
     width: 30px;
     color: #b69100; /* สีไอคอนแผนที่และโทรศัพท์ */
+}
+
+
+/* จัดการตำแหน่งรูปและข้อความให้กึ่งกลางกัน */
+/* จัดให้ Logo และกลุ่มข้อความอยู่ข้างกัน */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* สร้างกล่องครอบข้อความและสั่งให้จัดเรียงแบบแนวตั้ง (Column) */
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1; /* ปรับระยะห่างระหว่างบรรทัดให้ชิดกันขึ้น */
+}
+
+/* สไตล์สำหรับคำว่า Salathai (บรรทัดบน) */
+.brand-main {
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6a1b9a; /* สีม่วงเข้ม */
+}
+
+/* สไตล์สำหรับคำว่า Therapy (บรรทัดล่าง) */
+.brand-sub {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* เว้นระยะห่างตัวอักษรให้ดูโปร่งและกว้างเท่าบรรทัดบน */
+    color: #8e44ad; /* สีม่วงสว่าง */
+}
+
+/* ปรับแต่งรูปโลโก้ให้ขอบมนและดูสะอาด */
+.logo-img {
+    max-height: 90px;
+    width: auto;
+    border-radius: 8px; /* ถ้าโลโก้เป็นสี่เหลี่ยม การทำให้มนนิดๆ จะดู Soft ขึ้น */
+    transition: transform 0.3s ease;
+}
+
+/* เอฟเฟกต์เวลาเอาเมาส์วาง */
+.navbar-brand:hover .brand-text {
+    background: linear-gradient(to right, #8e44ad, #ba68c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-brand:hover .logo-img {
+    transform: scale(1.05); /* โลโก้ขยายใหญ่ขึ้นเล็กน้อย */
+}
+
+/* สำหรับมือถือ ปรับขนาดตัวอักษรลงเล็กน้อย */
+@media (max-width: 768px) {
+    .brand-text {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    .logo-img {
+        max-height: 45px;
+    }
 }
