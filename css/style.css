@@ -8137,7 +8137,7 @@ body {
   font-size: 18px;
   line-height: 1.8;
   font-weight: 300;
-  color: #a6a6a6; }
+  color: #3e3636; }
   body.menu-show {
     overflow: hidden;
     position: fixed;
@@ -9031,6 +9031,7 @@ textarea.form-control {
     font-size: 30px;
     display: block;
     margin-bottom: 5px;
+    margin-top: 30px;
     color: #d9bf77;
     line-height: 1;
     z-index: 1;
@@ -9212,20 +9213,22 @@ textarea.form-control {
     color: #b3b3b3;
     font-size: 16px; }
 
-.block-23 ul {
-  padding: 0; }
-  .block-23 ul li, .block-23 ul li > a {
-    display: table;
-    line-height: 1.5;
-    margin-bottom: 15px; }
-  .block-23 ul li .icon, .block-23 ul li .text {
-    display: table-cell;
-    vertical-align: top; }
-  .block-23 ul li .icon {
-    width: 40px;
-    font-size: 16px;
-    padding-top: 2px;
-    color: #000; }
+@media (max-width: 767px) {
+    .block-23 {
+        text-align: center; /* Centers text and inline elements */
+    }
+    .block-23 ul {
+        padding: 0;
+        display: inline-block; /* Allows the list to be centered by the parent's text-align */
+        text-align: left; /* Keeps the text left-aligned relative to the icons if preferred, OR change to center */
+    }
+    .block-23 li {
+        display: flex;
+        justify-content: center; /* Centers the icon and text horizontally */
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
 
 .block-7 {
   margin-bottom: 30px;
